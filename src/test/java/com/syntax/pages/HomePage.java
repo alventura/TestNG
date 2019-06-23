@@ -11,6 +11,14 @@ public class HomePage extends BaseClass {
 	@FindBy(xpath="//li[text()='Dashboard']")
 	public WebElement dashboardText;
 	
+	@FindBy(linkText="Admin")
+	public WebElement admin;
+	
+	@FindBy(linkText="Organization")
+	public WebElement organization;
+	
+	@FindBy(linkText="Locations")
+	public WebElement locations;
 	
 
 	public HomePage() {

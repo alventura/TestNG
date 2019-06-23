@@ -24,7 +24,7 @@ public class ConfigsReader extends BaseClass{
 		
 	}
 	
-	public static String getPropertyy(String key) {
+	public static String getProperty(String key) {
 		return prop.getProperty(key);
 		
 		

@@ -21,7 +21,7 @@ public static Select name;
 	
 	public static void setUpDriver(String browser, String url) {
 		if (browser.equalsIgnoreCase("chrome")) {
-			// For mac
+			
 			System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\drivers\\chromedriver.exe");
 			// for windows
 			// System.setProperty("webdriver.chrome.driver",
@@ -149,28 +149,43 @@ public static Select name;
     }else if(cssOrXpath.equalsIgnoreCase("xpath")) {
     	WebElement element=driver.findElement(By.xpath(location));
     	element.click();
-    }
+    	}
     }
     
-    public static void takeScreenshot(String folderName, String fileName) {
+    public static String takeScreenshot( String fileName) {
         TakesScreenshot ts=(TakesScreenshot)driver;
        File scr=ts.getScreenshotAs(OutputType.FILE);
-
+       
+      String dest=System.getProperty("user.dir")+"/target/screenshots/"+fileName+".png"; 
        try {
-            FileUtils.copyFile(scr, new File("screenshots/"+folderName+"/"+fileName+".png"));
+            FileUtils.copyFile(scr, new File(dest));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Unable to take screesnhot");
         }
+       	return dest;
     }
+    
+    
     public static void sendText(WebElement element, String value) {
 		element.clear();
 		element.sendKeys(value);
 	}
-    public static void login(WebElement username,WebElement password, WebElement loginBtn,String uname,String pwd) {
-  		CommonMethods.sendText(username,uname);
-  	    CommonMethods.sendText(password,pwd);
-  	    loginBtn.click();
-  	}
-  
+
+
+	public static void click(WebElement element) {
+		element.click();
+}
+	public static void selectList(WebElement element, String text) {
+
+		List<WebElement> listLocations = element.findElements(By.tagName("li"));
+		for (WebElement li : listLocations) {
+			String liText = li.getAttribute("innerHTML");
+
+			if (liText.contains(text)) {
+				li.click();
+				break;
+			}
+		}
+	}
 }

@@ -8,36 +8,15 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">4</td><td class="num">0</td><td class="num attn">2</td><td class="num">31,703</td><td></td><td></td></tr>
+<tr><th colspan="7">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num">0</td><td class="num attn">1</td><td class="num">37,499</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.syntax.testcases.AddEmployeePageTest</td><td><a href="#m0">addEmployeee</a></td><td rowspan="1">1560106366534</td><td rowspan="1">61</td></tr><tr class="failedodd"><td rowspan="1">com.syntax.testcases.LoginPageTest</td><td><a href="#m1">addEmployee</a></td><td rowspan="1">1560106377581</td><td rowspan="1">14286</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.syntax.testcases.AddEmployeePageTest</td><td><a href="#m2">setUp</a></td><td rowspan="1">1560106366601</td><td rowspan="1">6048</td></tr><tr class="passedodd"><td rowspan="1">com.syntax.testcases.LoginPageTest</td><td><a href="#m3">setUp</a></td><td rowspan="1">1560106372653</td><td rowspan="1">4927</td></tr><tr class="passedeven"><td rowspan="2">com.syntax.testcases.WeqasTest</td><td><a href="#m4">setUp</a></td><td rowspan="1">1560106391882</td><td rowspan="1">4243</td></tr><tr class="passedeven"><td><a href="#m5">tryAddEmployee</a></td><td rowspan="1">1560106396125</td><td rowspan="1">2063</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.syntax.testcases.LoginPageTest</td><td><a href="#m0">wrongLogin</a></td><td rowspan="1">1560719437467</td><td rowspan="1">2771</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.syntax.testcases.LoginPageTest</td><td><a href="#m1">doLogin</a></td><td rowspan="1">1560719411188</td><td rowspan="1">4382</td></tr><tr class="passedeven"><td><a href="#m2">loginToOrangeHRM</a></td><td rowspan="1">1560719421395</td><td rowspan="1">10257</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">com.syntax.testcases.AddEmployeePageTest#addEmployeee</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy5.clear(Unknown Source)
-	at com.syntax.utils.CommonMethods.sendText(CommonMethods.java:167)
-	at com.syntax.utils.CommonMethods.login(CommonMethods.java:171)
-	at com.syntax.testcases.AddEmployeePageTest.addEmployeee(AddEmployeePageTest.java:18)
-... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.syntax.testcases.LoginPageTest#addEmployee</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Cannot locate an element using partial link text=PIM
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LAPTOP-OIJ1FI09&apos;, ip: &apos;192.168.0.164&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByPartialLinkText(RemoteWebDriver.java:388)
-	at org.openqa.selenium.By$ByPartialLinkText.findElement(By.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy5.click(Unknown Source)
-	at com.syntax.testcases.LoginPageTest.addEmployee(LoginPageTest.java:21)
-... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.syntax.testcases.AddEmployeePageTest#setUp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.syntax.testcases.LoginPageTest#setUp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.syntax.testcases.WeqasTest#setUp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.syntax.testcases.WeqasTest#tryAddEmployee</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.syntax.testcases.LoginPageTest#wrongLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+	at com.syntax.testcases.LoginPageTest.wrongLogin(LoginPageTest.java:52)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.syntax.testcases.LoginPageTest#doLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.syntax.testcases.LoginPageTest#loginToOrangeHRM</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.syntax.testcases;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,50 +12,47 @@ import com.syntax.utils.BaseClass;
 import com.syntax.utils.CommonMethods;
 import com.syntax.utils.ConfigsReader;
 
-public class LoginPageTest extends BaseClass{
-	  @Test
-		public void addEmployee() {
-			 LoginPage log=new LoginPage();
-			 HomePage home =new HomePage();
-			 AddEmployeePage addEmp= new AddEmployeePage();
-			 CommonMethods.login(log.username, log.password, log.loginBtn, "admin", "admin");
-			addEmp.PIM.click();
-			addEmp.addEmployee.click();
+public class LoginPageTest extends BaseClass {
 
-			
-		}
-    
-    @Test(enabled=false)
+		
+    @Test(groups="smoke")
     public void loginToOrangeHRM() throws InterruptedException {
+    	test=report.createTest("Positive login");
         LoginPageWithoutPageFactory login = new LoginPageWithoutPageFactory();
+        test.info("Logging with valid credentials");
      Thread.sleep(6000);
-        login.username.sendKeys(ConfigsReader.getPropertyy("username"));
-        login.password.sendKeys(ConfigsReader.getPropertyy("password"));
+        login.username.sendKeys(ConfigsReader.getProperty("username"));
+        login.password.sendKeys(ConfigsReader.getProperty("password"));
         login.btnLogin.click();	
-       
+        test.info("Verifying element test is displayed");
+        HomePage home=new HomePage();
+       boolean isDisplayed= home.dashboardText.isDisplayed();
+       Assert.assertTrue(isDisplayed);
+      
 }
-    @Test(enabled=false)
+    @Test(groups="smoke")
     public void doLogin() {
     LoginPage login=new LoginPage();
-    CommonMethods.sendText(login.username,ConfigsReader.getPropertyy("username"));
-    CommonMethods.sendText(login.password,  ConfigsReader.getPropertyy("password"));
+    CommonMethods.sendText(login.username,ConfigsReader.getProperty("username"));
+    CommonMethods.sendText(login.password,  ConfigsReader.getProperty("password"));
     login.loginBtn.click();
     HomePage home=new HomePage();
     boolean isDisplayed = home.dashboardText.isDisplayed();
     Assert.assertTrue(isDisplayed); 
     
     }
-    @Test(enabled=false)
+    @Test(groups="regression")
     public void wrongLogin() {
     	LoginPage login=new LoginPage();
-        CommonMethods.sendText(login.username,ConfigsReader.getPropertyy("username"));
+        CommonMethods.sendText(login.username,ConfigsReader.getProperty("username"));
         CommonMethods.sendText(login.password,"123");
         login.loginBtn.click();
         boolean isDisplayed=login.wrongCredentials.isDisplayed();
-        Assert.assertTrue(isDisplayed);
+        Assert.assertTrue(false);
     }
    
  
+  
 
 }
     

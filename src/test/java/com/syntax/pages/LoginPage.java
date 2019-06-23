@@ -24,7 +24,12 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath="//div[@class='toast-message']")
 	public WebElement wrongCredentials;
 	//initialize all of our variables
-	
+	 
+	public void login(String uname,String pwd) {
+	  		CommonMethods.sendText(username,uname);
+	  	    CommonMethods.sendText(password,pwd);
+	  	    loginBtn.click();
+	  	}
 	
 	public LoginPage(){
 		PageFactory.initElements(driver,this);
